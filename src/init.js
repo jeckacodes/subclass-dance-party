@@ -15,19 +15,36 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
-
+    var dancerMakerFunctionName = this.attributes['data-dancer-maker-function-name'].nodeValue;
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
+    var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+    $(dancer.$node).attr('dancerType', dancerMakerFunctionName);
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
+
+  $('.addLineUp').on('click', function(event) {
+    var lineUp = function() {
+      for (var i = 0; i < window.dancers.length; i++) {
+        window.dancers[i].setPosition(300, 400 * i);
+      }
+    }();
+  });
+
+  var mousey = function() {
+    for (var i = 0; i < window.dancers.length; i++) {
+      $(window.dancers[i].$node).mouseover(function() {
+        window.dancers[i].setPosition(500, 700);
+      });
+    }
+  }();
 });
 

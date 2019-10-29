@@ -4,6 +4,9 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/157/302/493/disco-lights-blue-background-wallpaper-preview.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +24,22 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px;
   border-radius:10px;
   position:absolute;
+}
+[dancerType='BlinkyDancer']{
+  /* border:10px solid #bfff00; */
+  content: url('https://imgix.bustle.com/uploads/image/2019/6/5/7cd742af-6e6a-4295-b3e1-4ea71b3c09c2-napoleon-3.png?w=970&h=546&fit=crop&crop=faces&auto=format&q=70');
+  height: 350px;
+}
+[dancerType='SalsaDancer']{
+  /* border:10px solid #ff0040; */
+  content: url('https://i.pinimg.com/originals/26/5e/bb/265ebb647eea116ce62aeeb5f37925a9.jpg');
+  height: 350px;
+}
+[dancerType='AstonSalsaDancer']{
+  /* border:10px solid #ff00bf; */
+  content: url('https://i.pinimg.com/originals/12/9c/6f/129c6f19e9504b83168c6396eb9631d2.jpg');
+  height: 300px;
 }
